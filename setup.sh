@@ -17,7 +17,6 @@ linkfish() {
 
 #link bashrc
 
-#link zshrc
 echo "setup zsh >>>"
 if hash zsh 2>/dev/null; then
     echo "chsh -s `which zsh`"
@@ -29,6 +28,10 @@ if hash zsh 2>/dev/null; then
 else
     echo "please install zsh."
 fi
+#link alias
+ln -s "`pwd`/zsh/alias" "$HOME/.alias"
+#link zshrc
+ln -s "`pwd`/zsh/zshrc" "$HOME/.zshrc"
 
 echo "init homebrew >>>"
 if hash brew 2>/dev/null; then
@@ -48,8 +51,9 @@ fi
 if [ ! -d vim/bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git vim/bundle/vundle
 fi
-link vim
-link vimrc
+#link vim
+#link vimrc
+ln -s "`pwd`/vim/vimrc" "$HOME/.vimrc"
 vim +BundleInstall +qall
 
 echo "init python env >>>"
@@ -77,7 +81,8 @@ npm install -g less
 npm install -g jshint
 
 echo "init git >>>"
-link gitconfig
+#link gitconfig
+ln -s "`pwd`/git/gitconfig" "$HOME/.gitconfig"
 
 #link tmux.conf
 
