@@ -1,0 +1,6 @@
+# zsh
+alias la="ls -a"
+
+unalias lsa
+unalias ll
+
