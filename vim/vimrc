@@ -1,0 +1,196 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+"
+" My Bundles here:
+" 
+" original repos on github
+"文件搜索
+Bundle 'kien/ctrlp.vim'
+"美化状态栏样式
+Bundle 'Lokaltog/vim-powerline'
+"调试功能
+Bundle 'tonychi/vim-debug'
+
+" vim-scripts repos
+"文件夹管理
+Bundle 'The-NERD-tree'
+"Tag lsit, use ctags
+Bundle 'taglist.vim'
+Bundle 'snipMate'
+Bundle 'ZenCoding.vim'
+"格式化js代码
+Bundle '_jsbeautify'
+"管理Undo列表
+Bundle 'Gundo'
+
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"配色方案
+color desert
+
+if has("gui_running")
+  " 默认窗体宽度和高度
+  set columns=130
+  set lines=40
+  
+  " 去除工具栏显示
+  set guioptions-=T
+  "set guioptions-=m
+  
+  "使用鼠标
+  set mouse=a
+endif
+
+"自动补全命令使用菜单挂起列表显示
+set wildmenu
+
+"总是显示状态栏
+set laststatus=2
+
+"set columncursor
+set cursorline
+hi cursorline guibg=#000000
+
+"启用搜索高亮
+set hlsearch
+set incsearch
+
+set ruler
+
+set linespace=0
+
+"启用行号显示
+set number
+set numberwidth=5
+
+set scrolloff=5
+
+"启用输入命令自动显示
+set showcmd
+set showmode
+set showmatch
+
+"编码设置
+set enc=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+
+"允许退格键删除
+set backspace=2
+
+"取消自动换行
+set nowrap
+"整词换行
+set linebreak
+
+"自动缩进
+set autoindent
+set smartindent
+set cindent
+
+"设置Tab长度
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set textwidth=80
+set expandtab
+
+"保留最后50条命令记录
+set history=50
+
+"set clipboard=unnamedplus
+
+"启用语法侦测
+syntax on
+
+autocmd FileType python set foldmethod=indent foldlevel=99
+autocmd FileType python set columncursor
+"autocmd FileType python setlocal et sta sw=4 sts=4
+autocmd! bufwritepost vimrc source ~/.vimrc
+
+"
+" Key mapping
+"
+imap jj <esc>
+
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
+nnoremap ,e :e ~/.vimrc<CR>
+nnoremap ,s :source ~/.vimrc<CR>
+
+nnoremap ,n :NERDTreeToggle<CR>:TlistToggle<CR>
+nnoremap ,u :GundoToggle<CR>
+
+nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+nnoremap <c-j> <c-w>j
+
+"
+" Python, Vim-Debug
+"
+nnoremap <C-F5> :Dbg .<CR>
+nnoremap <F5> :Dbg run<CR>
+nnoremap <F6> :Dbg quit<CR>
+nnoremap <F9> :Dbg break<CR>
+nnoremap <F10> :Dbg over<CR>
+nnoremap <F11> :Dbg into<CR>
+nnoremap <C-F11> :Dbg out<CR>
+
+"
+" Plugin Config
+"
+"""""""""""""""""""""""
+"
+"  CtrlP
+"
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_map = ',,'
+let g:ctrlp_open_multiple_files = 'v'
+let g:ctrlp_by_filename = 1
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'file': '\v\.(log|jpg|png|jpeg)$'
+  \ }
+
+"
+" NERDTree
+"
+let g:NERDTreeWinSize=30
+
+"
+" Tlist
+"
+let g:Tlist_Use_Right_Window = 1
+
