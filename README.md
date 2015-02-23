@@ -20,12 +20,11 @@ Content
 Install
 -----------
 
-'''
+```
 # 克隆到本地
 git clone https://github.com/tonychi/dotfiles.git ~/.dotfiles
 cd dotfiles 
 # 执行安装
 setup.sh
-'''
-
+```
 
