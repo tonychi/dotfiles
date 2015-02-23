@@ -44,7 +44,7 @@ Bundle 'Gundo'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+"filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -57,6 +57,9 @@ filetype plugin on
 
 "配色方案
 color desert
+
+set t_Co=256
+set t_ut=
 
 if has("gui_running")
   " 默认窗体宽度和高度
