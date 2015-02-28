@@ -1,6 +1,17 @@
 # zsh
 alias la="ls -a"
 
+# quick edit config
+alias evim="vim ~/.vimrc"
+alias ezsh="vim ~/.zshrc"
+alias ebash="vim ~/.bash_profile"
+alias ealias="vim ~/.alias"
+
+alias evg="vim Vagrantflie"
+
+# vagrant
+alias vg="vagrant"
+
 unalias lsa
 unalias ll
 
