@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 # JAVA_HOME
 export JAVA_HOME='/usr/libexec/java_home -v 1.7'
-export PATH=${JAVA_HOME}/bin:$PATH
+# export PATH=${JAVA_HOME}/bin:$PATH
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -93,3 +93,16 @@ bindkey "^E" end-of-line
 # use .alias file
 [[ -f ~/.alias ]] && source ~/.alias
 
+#
+# Qu Jing iTerm & Terminal Setup Script
+# version 0.4
+# Felix Ding
+# Nov 18, 2014
+#
+function start_qujing {
+  export http_proxy='http://theironislands.f.getqujing.net:37509'
+  export HTTPS_PROXY='http://theironislands.f.getqujing.net:37509'
+}
+
+export GOPATH=/Users/tonychi/.go
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tonychi/.go/bin:/usr/local/go/bin
