@@ -80,7 +80,7 @@ set wildmenu
 "总是显示状态栏
 set laststatus=2
 
-"set columncursor
+"set cursorcolumn
 set cursorline
 hi cursorline guibg=#000000
 
@@ -136,7 +136,7 @@ set history=50
 syntax on
 
 autocmd FileType python set foldmethod=indent foldlevel=99
-autocmd FileType python set columncursor
+autocmd FileType python set cursorcolumn
 "autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd! bufwritepost vimrc source ~/.vimrc
 
