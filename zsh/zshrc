@@ -104,5 +104,5 @@ function start_qujing {
   export HTTPS_PROXY='http://theironislands.f.getqujing.net:37509'
 }
 
-export GOPATH=/Users/tonychi/.go
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tonychi/.go/bin:/usr/local/go/bin
+export GOPATH=/Users/tonychi/go
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tonychi/go/bin:/usr/local/go/bin
