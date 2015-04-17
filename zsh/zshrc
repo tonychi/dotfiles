@@ -105,4 +105,8 @@ function start_qujing {
 }
 
 export GOPATH=/Users/tonychi/go
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tonychi/go/bin:/usr/local/go/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:/usr/local/go/bin
+
+export ANDROID_HOME=/Library/Android/SDK
+export PATH=$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
