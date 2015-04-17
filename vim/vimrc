@@ -32,6 +32,7 @@ Bundle 'ZenCoding.vim'
 Bundle '_jsbeautify'
 "管理Undo列表
 Bundle 'Gundo'
+Bundle 'rizzatti/dash.vim'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
