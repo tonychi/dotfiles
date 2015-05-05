@@ -104,6 +104,16 @@ function start_qujing {
     export HTTPS_PROXY='http://theironislands.f.getqujing.net:37509'
 }
 
+code () {
+    if [[ $# = 0 ]] 
+    then
+        open -a "Visual Studio Code"
+    else
+        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
+        open -a "Visual Studio Code" --args "$F"
+    fi
+}
+
 export GOPATH=/Users/tonychi/go
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:/usr/local/go/bin
 
