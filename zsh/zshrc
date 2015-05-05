@@ -100,8 +100,8 @@ bindkey "^E" end-of-line
 # Nov 18, 2014
 #
 function start_qujing {
-  export http_proxy='http://theironislands.f.getqujing.net:37509'
-  export HTTPS_PROXY='http://theironislands.f.getqujing.net:37509'
+    export http_proxy='http://theironislands.f.getqujing.net:37509'
+    export HTTPS_PROXY='http://theironislands.f.getqujing.net:37509'
 }
 
 export GOPATH=/Users/tonychi/go
