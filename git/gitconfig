@@ -2,7 +2,7 @@
 	name = Tony Chi
 	email = qiwei219@gmail.com
 [core]
-    editor = mvim
+    editor = vim
 [alias]
     ci = commit -a -v
     ch = checkout
