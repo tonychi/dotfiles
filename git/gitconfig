@@ -1,5 +1,18 @@
 [user]
 	name = Tony Chi
 	email = qiwei219@gmail.com
+[core]
+    editor = mvim
+[alias]
+    ci = commit -a -v
+    ch = checkout
+    st = status
+    br = branch
+    bra = branch -a
+    throw = reset --hard HEAD
+    throws = reset --soft HEAD^
+    throwh = reset --hard HEAD^
+[color]
+    ui = true
 [push]
     default = simple
