@@ -5,6 +5,7 @@
     editor = vim
 [alias]
     ci = commit -a -v
+    ca = commit --amend -v
     ch = checkout
     st = status
     br = branch
