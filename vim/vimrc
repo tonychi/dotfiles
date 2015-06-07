@@ -60,6 +60,7 @@ filetype plugin indent on    " required
 
 "配色方案
 color desert
+"color molokai
 
 set t_Co=256
 set t_ut=
@@ -72,6 +73,10 @@ if has("gui_running")
   " 去除工具栏显示
   set guioptions-=T
   "set guioptions-=m
+  " 隐藏左右下不滚动条
+  set guioptions-=L
+  set guioptions-=r
+  set guioptions-=b
   
   "使用鼠标
   set mouse=a
@@ -153,7 +158,8 @@ nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 nnoremap ,e :e ~/.vimrc<CR>
 nnoremap ,s :source ~/.vimrc<CR>
 
-nnoremap ,n :NERDTreeToggle<CR>:TlistToggle<CR>
+nnoremap ,n :NERDTreeToggle<CR>
+nnoremap ,t :TlistToggle<CR>
 nnoremap ,u :GundoToggle<CR>
 
 nnoremap <c-l> <c-w>l
