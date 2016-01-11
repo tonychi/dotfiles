@@ -45,7 +45,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize github vagrant python pip virtualenv node brew osx jump subl sublime zsh-syntax-highlighting)
+plugins=(git colored-man colorize github vagrant python pip virtualenv node brew osx autojump sublime subl)
 
 # User configuration
 
@@ -56,7 +56,7 @@ source $ZSH/oh-my-zsh.sh
 
 # JAVA_HOME
 # export JAVA_HOME='/usr/libexec/java_home -v 1.7'
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home'
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
 # export PATH=${JAVA_HOME}/bin:$PATH
 
 # You may need to manually set your language environment
@@ -94,30 +94,12 @@ bindkey "^E" end-of-line
 # use .alias file
 [[ -f ~/.alias ]] && source ~/.alias
 
-#
-# Qu Jing iTerm & Terminal Setup Script
-# version 0.4
-# Felix Ding
-# Nov 18, 2014
-#
-function start_qujing {
-    export http_proxy='http://theironislands.f.getqujing.net:20115'
-    export HTTPS_PROXY='http://theironislands.f.getqujing.net:20115'
-}
-
-code () {
-    if [[ $# = 0 ]] 
-    then
-        open -a "Visual Studio Code"
-    else
-        [[ $1 = /* ]] && F="$1" || F="$PWD/${1#./}"
-        open -a "Visual Studio Code" --args "$F"
-    fi
-}
-
 export GOPATH=/Users/tonychi/go
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:${GOPATH}/bin:/usr/local/go/bin
 
 export ANDROID_HOME=~/Library/Android/SDK
 export PATH=$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
