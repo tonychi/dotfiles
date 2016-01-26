@@ -103,3 +103,6 @@ export PATH=$PATH:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+# Load dnvm
+[ -s "/Users/tonychi/.dnx/dnvm/dnvm.sh" ] && . "/Users/tonychi/.dnx/dnvm/dnvm.sh"
+
