@@ -237,7 +237,7 @@ map <Leader>ss :source ~/.vimrc<CR>
 map <Leader>mm :NERDTreeToggle<CR>
 map <F1> :NERDTreeToggle<CR>
 
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=30
 let g:NERDTreeShowBookmarks=1
 
 
