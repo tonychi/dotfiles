@@ -106,3 +106,7 @@ source $(brew --prefix nvm)/nvm.sh
 # Load dnvm
 [ -s "/Users/tonychi/.dnx/dnvm/dnvm.sh" ] && . "/Users/tonychi/.dnx/dnvm/dnvm.sh"
 
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
