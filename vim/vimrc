@@ -57,6 +57,9 @@ Plugin 'fisadev/vim-debug.vim'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
 
+" EditorConfig
+Plugin 'editorconfig/editorconfig-vim'
+
 " 语言扩展
 Plugin 'tomasr/molokai'
 Plugin 'othree/html5.vim'
@@ -396,6 +399,7 @@ let g:NERDSpaceDelims=1
 """"""""""""""""""""""""""""""""""""""""""
 
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_toc_autofit = 0
 
 "
 " Python mode
