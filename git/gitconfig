@@ -1,4 +1,4 @@
-[user]
+[uset]
 	name = tonychi
 	email = qiwei219@gmail.com
 [core]
@@ -9,8 +9,7 @@
     ca = commit --amend -v
     ch = checkout
     st = status
-    br = branch
-    bra = branch -a
+    br = branch -a
     throw = reset --hard HEAD
     throws = reset --soft HEAD^
     throwh = reset --hard HEAD^
