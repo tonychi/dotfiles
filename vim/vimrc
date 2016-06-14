@@ -226,12 +226,12 @@ map <Leader>ss :source ~/.vimrc<CR>
 
 " Tab manage
 "
-" map <Leader>tt :tabnew<CR>
-" map <Leader>tc :tabclose<CR>
-" map <Leader>tn :tabnext<CR>
-" map <Leader>tp :tabprevious<CR>
-" map <Leader>tf :tabfirst<CR>
-" map <Leader>tl :tablast<CR>
+map <Leader><tab>t :tabnew<CR>
+map <Leader><tab>c :tabclose<CR>
+map <Leader><tab>n :tabnext<CR>
+map <Leader><tab>p :tabprevious<CR>
+map <Leader><tab>f :tabfirst<CR>
+map <Leader><tab>l :tablast<CR>
 
 
 "
