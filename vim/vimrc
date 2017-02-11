@@ -15,6 +15,10 @@ Plugin 'gmarik/Vundle.vim'
 "
 """"""""""""""""""""""""""""""""""""
 
+" Color Scheme
+Plugin 'tomasr/molokai'
+Plugin 'gummesson/stereokai.vim'
+
 " Status Bar
 Plugin 'bling/vim-airline'
 " File Browser
@@ -35,11 +39,18 @@ Plugin 't9md/vim-choosewin'
 " Snippets
 Plugin 'honza/vim-snippets'
 
+" Commenter
 Plugin 'scrooloose/nerdcommenter'
 
+" EditorConfig
+Plugin 'editorconfig/editorconfig-vim'
+
+"
 " Git
 " Plugin 'motemen/git-vim'
 " Plugin 'mhinz/vim-signify'
+Plugin 'airblade/vim-gitgutter'
+
 " Dash
 Plugin 'rizzatti/dash.vim'
 
@@ -48,22 +59,25 @@ Plugin 'mattn/emmet-vim'
 " Formater
 Plugin 'godlygeek/tabular'
 
+"
 " Python mode
 Plugin 'klen/python-mode'
+" Python, Fold
+Plugin 'tmhedberg/SimpylFold'
+" Python, Debug
+" Plugin 'fisadev/vim-debug.vim'
 
-" Python Debug
-Plugin 'fisadev/vim-debug.vim'
-
+"
 " Markdown
 Plugin 'plasticboy/vim-markdown'
+Plugin 'mzlogin/vim-markdown-toc'
 
-" EditorConfig
-Plugin 'editorconfig/editorconfig-vim'
-
+"
 " 语言扩展
-Plugin 'tomasr/molokai'
-Plugin 'othree/html5.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
+" Plugin 'othree/html5.vim'
+" Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'posva/vim-vue'
 
 
 " All of your Plugins must be added before the following line
@@ -82,8 +96,10 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "配色方案
+set background=dark
 color desert
 "color molokai
+"color one
 
 set t_Co=256
 set t_ut=
@@ -130,6 +146,7 @@ set linespace=0
 "启用行号显示
 set number
 set numberwidth=5
+set relativenumber
 
 set scrolloff=5
 
@@ -193,11 +210,7 @@ syntax on
 " Auto Command
 "
 
-autocmd FileType python set foldmethod=indent foldlevel=99
-autocmd FileType python set cursorcolumn
-"autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd! bufwritepost vimrc source ~/.vimrc
-
 autocmd FileType mkd.markdown set textwidth=120 tabstop=3 shiftwidth=3 softtabstop=3
 
 "
@@ -217,12 +230,14 @@ map <Leader>ee :e ~/.vimrc<CR>
 "
 map <Leader>ss :source ~/.vimrc<CR>
 
+
 " Window focus
 "
 " map <Leader>l <C-w>l
 " map <Leader>h <C-w>h
 " map <Leader>k <C-w>k
 " map <Leader>j <C-w>j
+
 
 " Tab manage
 "
@@ -406,6 +421,20 @@ let g:vim_markdown_toc_autofit = 0
 "
 """"""""""""""""""""""""""""""""""""""""""
 
+" autocmd FileType python set foldmethod=indent foldlevel=99
+" autocmd FileType python setlocal et sta sw=4 sts=4
+" autocmd FileType python set cursorcolumn
+autocmd BufNewFile, BufRead *.py 
+            \ set textwidth=79
+            \ set shiftwidth=4
+            \ set tabstop=4
+            \ set softtabstop=4
+            \ set expandtab
+            \ set shiftround
+            \ set autoindent
+            \ set fileformat=unix
+            \ set cursorcolumn
+
 " don't use linter, we use syntastic for that
 let g:pymode_lint_on_write = 0
 let g:pymode_lint_signs = 0
@@ -420,6 +449,8 @@ let g:pymode_rope_goto_definition_cmd = 'e'
 nmap ,D :tab split<CR>:PymodePython rope.goto()<CR>
 nmap ,o :RopeFindOccurrences<CR>
 
+" SimpylFold
+let g:SimpylFold_docstring_preview = 1
 
 "
 " Python, Vim-Debug
