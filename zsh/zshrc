@@ -55,8 +55,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 source $ZSH/oh-my-zsh.sh
 
 # JAVA_HOME
-# export JAVA_HOME='/usr/libexec/java_home -v 1.7'
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
+export JAVA_HOME=`/usr/libexec/java_home`
+# export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
 # export PATH=${JAVA_HOME}/bin:$PATH
 
 # You may need to manually set your language environment
@@ -89,9 +89,6 @@ bindkey "^E" end-of-line
 
 # use .alias file
 [[ -f ~/.alias ]] && source ~/.alias
-
-# use .proxy file
-[[ -f ~/.proxy ]] && source ~/.proxy
 
 # PATH
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
